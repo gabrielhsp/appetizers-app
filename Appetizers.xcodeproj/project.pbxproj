@@ -14,6 +14,7 @@
 		9BBB24BA2B586EE500DD767A /* AppetizerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBB24B92B586EE500DD767A /* AppetizerTabView.swift */; };
 		9BBB24BC2B586EE900DD767A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BBB24BB2B586EE900DD767A /* Assets.xcassets */; };
 		9BBB24BF2B586EE900DD767A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BBB24BE2B586EE900DD767A /* Preview Assets.xcassets */; };
+		9BEEBC832B5B1CDF00774110 /* Appetizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEEBC822B5B1CDE00774110 /* Appetizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		9BBB24B92B586EE500DD767A /* AppetizerTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerTabView.swift; sourceTree = "<group>"; };
 		9BBB24BB2B586EE900DD767A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BBB24BE2B586EE900DD767A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9BEEBC822B5B1CDE00774110 /* Appetizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appetizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		9BBB24B62B586EE500DD767A /* Appetizers */ = {
 			isa = PBXGroup;
 			children = (
+				9BEEBC812B5B1CAE00774110 /* Models */,
 				9BBB24B72B586EE500DD767A /* AppetizersApp.swift */,
 				9BBB24B92B586EE500DD767A /* AppetizerTabView.swift */,
 				9BBB24BB2B586EE900DD767A /* Assets.xcassets */,
@@ -74,6 +77,14 @@
 				9BBB24BE2B586EE900DD767A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9BEEBC812B5B1CAE00774110 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9BEEBC822B5B1CDE00774110 /* Appetizer.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BEEBC832B5B1CDF00774110 /* Appetizer.swift in Sources */,
 				9BA5248A2B58A11F0019A2F7 /* AccountView.swift in Sources */,
 				9BBB24BA2B586EE500DD767A /* AppetizerTabView.swift in Sources */,
 				9BBB24B82B586EE500DD767A /* AppetizersApp.swift in Sources */,
