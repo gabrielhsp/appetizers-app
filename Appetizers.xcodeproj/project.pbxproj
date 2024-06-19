@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B4D5FF32C2268B800A89C56 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D5FF22C2268B800A89C56 /* LoadingView.swift */; };
 		9B5FD17C2B82629C00A95620 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5FD17B2B82629C00A95620 /* NetworkManager.swift */; };
 		9B5FD17E2B82637600A95620 /* APError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5FD17D2B82637600A95620 /* APError.swift */; };
 		9B5FD1802B8269A900A95620 /* AppetizerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5FD17F2B8269A900A95620 /* AppetizerListViewModel.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B4D5FF22C2268B800A89C56 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		9B5FD17B2B82629C00A95620 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		9B5FD17D2B82637600A95620 /* APError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APError.swift; sourceTree = "<group>"; };
 		9B5FD17F2B8269A900A95620 /* AppetizerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListViewModel.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				9BA524892B58A11F0019A2F7 /* AccountView.swift */,
 				9BA5248B2B58A1290019A2F7 /* OrderView.swift */,
 				9B75FC8F2B7EEDB700C664AC /* AppetizerListCell.swift */,
+				9B4D5FF22C2268B800A89C56 /* LoadingView.swift */,
 			);
 			path = Appetizers;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				9B5FD17C2B82629C00A95620 /* NetworkManager.swift in Sources */,
 				9BBB24B82B586EE500DD767A /* AppetizersApp.swift in Sources */,
 				9BA524882B58A1130019A2F7 /* AppetizerListView.swift in Sources */,
+				9B4D5FF32C2268B800A89C56 /* LoadingView.swift in Sources */,
 				9BA5248C2B58A1290019A2F7 /* OrderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
