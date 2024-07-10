@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9B3B33002C28D80800B79F5C /* AppetizerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3B32FF2C28D80800B79F5C /* AppetizerDetailView.swift */; };
 		9B3B6CD42C3E063A00FABD73 /* APButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3B6CD32C3E063A00FABD73 /* APButton.swift */; };
+		9B3B6CD62C3E06D700FABD73 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3B6CD52C3E06D700FABD73 /* DismissButton.swift */; };
 		9B4D5FF32C2268B800A89C56 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D5FF22C2268B800A89C56 /* LoadingView.swift */; };
 		9B5FD17C2B82629C00A95620 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5FD17B2B82629C00A95620 /* NetworkManager.swift */; };
 		9B5FD17E2B82637600A95620 /* APError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5FD17D2B82637600A95620 /* APError.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		9B3B32FF2C28D80800B79F5C /* AppetizerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerDetailView.swift; sourceTree = "<group>"; };
 		9B3B6CD32C3E063A00FABD73 /* APButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APButton.swift; sourceTree = "<group>"; };
+		9B3B6CD52C3E06D700FABD73 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 		9B4D5FF22C2268B800A89C56 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		9B5FD17B2B82629C00A95620 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		9B5FD17D2B82637600A95620 /* APError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APError.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				9B3B6CD32C3E063A00FABD73 /* APButton.swift */,
+				9B3B6CD52C3E06D700FABD73 /* DismissButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				9B5FD1852B826E6C00A95620 /* AlertContext.swift in Sources */,
 				9B5FD17E2B82637600A95620 /* APError.swift in Sources */,
 				9B75FC902B7EEDB800C664AC /* AppetizerListCell.swift in Sources */,
+				9B3B6CD62C3E06D700FABD73 /* DismissButton.swift in Sources */,
 				9B5FD1802B8269A900A95620 /* AppetizerListViewModel.swift in Sources */,
 				9B3B6CD42C3E063A00FABD73 /* APButton.swift in Sources */,
 				9BA5248A2B58A11F0019A2F7 /* AccountView.swift in Sources */,
