@@ -9,23 +9,19 @@ import SwiftUI
 
 final class AccountViewModel: ObservableObject {
     // MARK: - Properties
-    @Published var firstName: String = ""
-    @Published var lastName: String = ""
-    @Published var email: String = ""
-    @Published var birthdate: Date = Date()
-    @Published var extraNapkins: Bool = false
-    @Published var frequentRefills: Bool = false
+    @AppStorage("user") private var userData: Data?
+    @Published var user: User = User()
     @Published var alertItem: AlertItem?
     
     // MARK: - Computed Properties
     var isValidForm: Bool {
-        guard !firstName.isEmpty && !lastName.isEmpty && !email.isEmpty else {
-            handleFormErrors(forContext: AlertContext.invalidForm)
+        guard !user.firstName.isEmpty && !user.lastName.isEmpty && !user.email.isEmpty else {
+            presentAlertItem(forContext: AlertContext.invalidForm)
             return false
         }
         
-        guard email.isValidEmail else {
-            handleFormErrors(forContext: AlertContext.invalidEmail)
+        guard user.email.isValidEmail else {
+            presentAlertItem(forContext: AlertContext.invalidEmail)
             return false
         }
         
@@ -38,11 +34,30 @@ final class AccountViewModel: ObservableObject {
             return
         }
         
-        print("Changes have been saved successfully")
+        do {
+            let data = try JSONEncoder().encode(user)
+            userData = data
+            
+            presentAlertItem(forContext: AlertContext.userSaveSuccess)
+        } catch {
+            presentAlertItem(forContext: AlertContext.invalidUserData)
+        }
+    }
+    
+    func retrieveUser() {
+        guard let userData else {
+            return
+        }
+        
+        do {
+            user = try JSONDecoder().decode(User.self, from: userData)
+        } catch {
+            presentAlertItem(forContext: AlertContext.invalidUserData)
+        }
     }
     
     // MARK: - Private Methods
-    private func handleFormErrors(forContext alertItem: AlertItem) {
+    private func presentAlertItem(forContext alertItem: AlertItem) {
         DispatchQueue.main.async { [weak self] in
             self?.alertItem = alertItem
         }
