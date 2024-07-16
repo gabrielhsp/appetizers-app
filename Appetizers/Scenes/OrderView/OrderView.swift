@@ -12,23 +12,30 @@ struct OrderView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                List {
-                    /// We're using a `ForEach` here to be able to use the delete swipe action
-                    /// It's not available on a `List` element
-                    ForEach(orderItems) { appetizer in
-                        AppetizerListCell(appetizer: appetizer)
+            ZStack {
+                VStack {
+                    List {
+                        /// We're using a `ForEach` here to be able to use the delete swipe action
+                        /// It's not available on a `List` element
+                        ForEach(orderItems) { appetizer in
+                            AppetizerListCell(appetizer: appetizer)
+                        }
+                        .onDelete(perform: deleteItems)
                     }
-                    .onDelete(perform: deleteItems)
+                    .listStyle(.plain)
+                    
+                    Button {
+                        print("Order placed")
+                    } label: {
+                        APButton(title: "$99.99 - Place Order")
+                    }
+                    .padding(.bottom, 25)
                 }
-                .listStyle(.plain)
                 
-                Button {
-                    print("Order placed")
-                } label: {
-                    APButton(title: "$99.99 - Place Order")
+                if orderItems.isEmpty {
+                    EmptyState(imageName: .emptyOrder,
+                               message: "You have no items in your order. Please add an appetizer!")
                 }
-                .padding(.bottom, 25)
             }
             .navigationTitle("🧾 Orders")
         }
