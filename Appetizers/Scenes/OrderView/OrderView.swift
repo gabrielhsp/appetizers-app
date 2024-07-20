@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OrderView: View {
-    @State private var orderItems: [Appetizer] = MockData.orderItems
+    @EnvironmentObject var order: Order
     
     var body: some View {
         NavigationView {
@@ -17,32 +17,28 @@ struct OrderView: View {
                     List {
                         /// We're using a `ForEach` here to be able to use the delete swipe action
                         /// It's not available on a `List` element
-                        ForEach(orderItems) { appetizer in
+                        ForEach(order.items) { appetizer in
                             AppetizerListCell(appetizer: appetizer)
                         }
-                        .onDelete(perform: deleteItems)
+                        .onDelete(perform: order.deleteItems)
                     }
                     .listStyle(.plain)
                     
                     Button {
                         print("Order placed")
                     } label: {
-                        APButton(title: "$99.99 - Place Order")
+                        APButton(title: "$\(order.totalPrice, specifier: "%.2f") - Place Order")
                     }
                     .padding(.bottom, 25)
                 }
                 
-                if orderItems.isEmpty {
+                if order.items.isEmpty {
                     EmptyState(imageName: .emptyOrder,
                                message: "You have no items in your order. Please add an appetizer!")
                 }
             }
             .navigationTitle("🧾 Orders")
         }
-    }
-    
-    func deleteItems(at offsets: IndexSet) {
-        orderItems.remove(atOffsets: offsets)
     }
 }
 
