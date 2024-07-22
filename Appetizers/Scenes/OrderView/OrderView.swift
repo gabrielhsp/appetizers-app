@@ -19,6 +19,7 @@ struct OrderView: View {
                         /// It's not available on a `List` element
                         ForEach(order.items) { appetizer in
                             AppetizerListCell(appetizer: appetizer)
+                                .listRowSeparator(.hidden)
                         }
                         .onDelete(perform: order.deleteItems)
                     }
@@ -27,8 +28,9 @@ struct OrderView: View {
                     Button {
                         print("Order placed")
                     } label: {
-                        APButton(title: "$\(order.totalPrice, specifier: "%.2f") - Place Order")
+                        Text("$\(order.totalPrice, specifier: "%.2f") - Place Order")
                     }
+                    .modifier(StandardButtonStyle())
                     .padding(.bottom, 25)
                 }
                 
