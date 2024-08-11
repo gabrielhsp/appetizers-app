@@ -6,12 +6,46 @@
 //
 
 import Foundation
+import RegexBuilder
 
 extension String {
     var isValidEmail: Bool {
-        let emailFormat: String = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPredicate: NSPredicate = NSPredicate(format: "SELF MATCHES %@", emailFormat)
+        let emailRegex = Regex {
+            // First parts of the RegEx matching the characters for the user on email
+            OneOrMore {
+                CharacterClass(
+                    .anyOf("._%+-"),
+                    ("A"..."Z"),
+                    ("0"..."9"),
+                    ("a"..."z")
+                )
+            }
+            
+            // Second part matching the presente of `@` character
+            "@"
+            
+            // Third part matching the characters after the `@`
+            OneOrMore {
+                CharacterClass(
+                    .anyOf("-"),
+                    ("A"..."Z"),
+                    ("a"..."z"),
+                    ("0"..."9")
+                )
+            }
+            
+            // And finally matching the dot, where it's interesting to notice that we can have 2 dots after
+            Repeat(1...2) {
+                "."
+                Repeat(2...64) {
+                    CharacterClass(
+                        ("A"..."Z"),
+                        ("a"..."z")
+                    )
+                }
+            }
+        }
         
-        return emailPredicate.evaluate(with: self)
+        return self.wholeMatch(of: emailRegex) != nil
     }
 }
