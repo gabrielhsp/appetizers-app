@@ -5,15 +5,17 @@
 //  Created by Gabriel Pereira on 18/02/24.
 //
 
+import Observation
 import SwiftUI
 
 @MainActor
+@Observable
 final class AppetizerListViewModel: ObservableObject {
-    @Published var appetizers: [Appetizer] = []
-    @Published var alertItem: AlertItem?
-    @Published var isLoading: Bool = false
-    @Published var isShowingDetail: Bool = false
-    @Published var selectedAppetizer: Appetizer?
+    var appetizers: [Appetizer] = []
+    var alertItem: AlertItem?
+    var isLoading: Bool = false
+    var isShowingDetail: Bool = false
+    var selectedAppetizer: Appetizer?
     
     // MARK: - Internal Methods
     func getAppetizers() {
