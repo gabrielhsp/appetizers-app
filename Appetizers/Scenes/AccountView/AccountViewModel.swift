@@ -5,13 +5,18 @@
 //  Created by Gabriel Pereira on 11/07/24.
 //
 
+import Observation
 import SwiftUI
 
-final class AccountViewModel: ObservableObject {
+@Observable
+final class AccountViewModel {
     // MARK: - Properties
-    @AppStorage("user") private var userData: Data?
-    @Published var user: User = User()
-    @Published var alertItem: AlertItem?
+    @ObservationIgnored
+    @AppStorage("user")
+    private var userData: Data?
+    
+    var user: User = User()
+    var alertItem: AlertItem?
     
     // MARK: - Computed Properties
     var isValidForm: Bool {
