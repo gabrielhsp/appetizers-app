@@ -8,8 +8,8 @@
 import Observation
 import SwiftUI
 
-@MainActor
 @Observable
+@MainActor
 final class AppetizerListViewModel {
     var appetizers: [Appetizer] = []
     var alertItem: AlertItem?
